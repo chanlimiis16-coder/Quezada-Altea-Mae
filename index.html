@@ -9,7 +9,7 @@
             --antique-beige: #e5d3b3;
             --deep-bronze: #5d4037;
             --royal-gold: #b8860b;
-            --dark-glass: rgba(45, 30, 20, 0.75);
+            --dark-glass: rgba(45, 30, 20, 0.8);
             --diamond-white: #ffffff;
             --parchment: #fdf5e6;
         }
@@ -32,7 +32,7 @@
             padding: 20px;
         }
 
-        /* Glass Box Container for Tabs */
+        /* Glass Box for Navigation */
         .nav-glass-box {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
@@ -55,7 +55,7 @@
         /* Tabs and Buttons */
         .tab-btn, .glass-link {
             background: var(--dark-glass);
-            color: var(--parchment);
+            color: white !important; /* Force white text */
             border: 1px solid var(--royal-gold);
             padding: 12px 10px;
             cursor: pointer;
@@ -63,7 +63,7 @@
             font-size: 0.85rem;
             font-weight: bold;
             transition: all 0.3s ease;
-            text-transform: none; /* Removed All Caps */
+            text-transform: none; /* Sentence Case */
             text-align: center;
             letter-spacing: 1px;
             text-decoration: none;
@@ -81,7 +81,6 @@
             width: 100%;
             margin: 8px 0;
             display: block;
-            color: white !important; /* Forces font white */
         }
 
         .tab-btn:hover, .glass-link:hover, .tab-btn.active {
@@ -100,7 +99,7 @@
         .content-section {
             display: none;
             background: rgba(45, 30, 20, 0.95);
-            color: white; /* Content font to white */
+            color: white;
             border: 2px solid var(--royal-gold);
             padding: 40px 25px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.5);
@@ -113,12 +112,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Centered Queen Portrait Frame */
-        .frame-wrapper {
+        /* Centered Frame Styling */
+        .profile-container {
+            width: 100%;
             display: flex;
             justify-content: center;
-            width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .portrait-frame {
@@ -131,14 +130,14 @@
         }
 
         .profile-pic {
-            width: 260px;
+            width: 250px;
             max-width: 100%;
             height: auto;
             display: block;
             border: 3px solid white;
         }
 
-        /* Nested TOC Style */
+        /* TOC Nesting */
         .toc-list, .nested-content {
             list-style: none;
             padding: 0;
@@ -155,7 +154,7 @@
 
         .expandable-label {
             cursor: pointer;
-            color: white; /* Label white */
+            color: white;
             font-weight: bold;
             font-family: 'Cinzel', serif;
             display: block;
@@ -171,6 +170,7 @@
 
         @media (max-width: 600px) {
             .tab-btn { flex: 1 1 45%; font-size: 0.75rem; }
+            .profile-pic { width: 200px; }
         }
     </style>
 </head>
@@ -188,9 +188,9 @@
 <div class="content-wrapper">
     
     <div id="profile" class="content-section">
-        <div class="frame-wrapper">
+        <div class="profile-container">
             <div class="portrait-frame">
-                <img src="1234567890.jpg" alt="Altea Mae M. Quezada" class="profile-pic">
+                <img src="altea-photo.jpg" alt="Altea Mae M. Quezada" class="profile-pic">
             </div>
         </div>
         <h2 style="font-family: 'Cinzel', serif; color: var(--royal-gold);">Altea Mae M. Quezada</h2>
