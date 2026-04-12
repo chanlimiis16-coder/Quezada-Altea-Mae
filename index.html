@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altea Mae M. Quezada | E-Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-black: #0a0a0a;
+            --deep-obsidian: #121212;
+            --royal-gold: #d4af37;
+            --accent-burgundy: #2d0b0b;
+            --soft-white: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--royal-black);
+            color: var(--soft-white);
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(45, 11, 11, 0.2));
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid var(--royal-gold);
+            width: 70%;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--royal-gold);
+            letter-spacing: 5px;
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: var(--royal-gold);
+            border: 1px solid var(--royal-gold);
+            padding: 12px 30px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--royal-gold);
+            color: var(--royal-black);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            width: 90%;
+            max-width: 950px;
+            background: rgba(18, 18, 18, 0.8);
+            border: 1px solid #333;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            margin-bottom: 60px;
+            border-top: 3px solid var(--royal-gold);
+        }
+
+        .active-section {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profile Layout */
+        .profile-header {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile-pic {
+            width: 240px;
+            height: 300px;
+            border: 2px solid var(--royal-gold);
+            object-fit: cover;
+            box-shadow: 10px 10px 0px var(--accent-burgundy);
+        }
+
+        .profile-info h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--royal-gold);
+            margin-top: 0;
+        }
+
+        .biography {
+            line-height: 1.9;
+            text-align: justify;
+            color: #ccc;
+        }
+
+        .quote-box {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px double var(--royal-gold);
+            border-bottom: 1px double var(--royal-gold);
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--royal-gold);
+        }
+
+        /* Table of Contents & Links */
+        .link-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .link-list li {
+            margin: 18px 0;
+            padding-left: 15px;
+        }
+
+        .link-list a {
+            color: var(--soft-white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s, padding-left 0.3s;
+            display: inline-block;
+        }
+
+        .link-list a:hover {
+            color: var(--royal-gold);
+            padding-left: 10px;
+        }
+
+        .sub-list {
+            margin-left: 40px;
+            border-left: 1px solid #444;
+            margin-top: 10px;
+        }
+
+        .nested-label {
+            color: var(--royal-gold);
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            padding: 30px;
+            color: #555;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            color: var(--royal-gold);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ALTEA MAE M. QUEZADA</h1>
+</header>
+
+<nav class="nav-container">
+    <button class="tab-btn active" onclick="showSection('profile', this)">A. Profile</button>
+    <button class="tab-btn" onclick="showSection('cover', this)">B. Cover Letter</button>
+    <button class="tab-btn" onclick="showSection('toc', this)">C. Table of Contents</button>
+    <button class="tab-btn" onclick="showSection('conclusion', this)">D. Conclusion</button>
+</nav>
+
+<div id="profile" class="content-section active-section">
+    <div class="profile-header">
+        <img src="altea-photo.jpg" alt="Altea Mae M. Quezada" class="profile-pic">
+        <div class="profile-info">
+            <h2>The Educator's Roots</h2>
+            <p class="biography">
+                Hi! I am Altea Mae M. Quezada, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra, a place that shaped who I am today. 
+                <br><br>
+                I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada, who taught me the values of hard work, perseverance, and kindness. Growing up in a close-knit community, I learned the importance of culture, family, and staying true to one’s roots.
+            </p>
+        </div>
+    </div>
+    <div class="biography">
+        <p>I am passionate about teaching because I believe every child deserves guidance, encouragement, and a safe space to grow. I want to be the kind of teacher who not only shares knowledge but also inspires confidence, curiosity, and love for learning in every student I meet.</p>
+        <p>When I’m not studying, I enjoy reflecting on life, exploring new ideas, and thinking of creative ways to make learning fun and meaningful. My journey as a future educator is just beginning, but I am ready to embrace every challenge and opportunity with a big heart and an open mind.</p>
+    </div>
+    <div class="quote-box">
+        “In progress, but with purpose.”
+    </div>
+</div>
+
+<div id="cover" class="content-section">
+    <h2>Cover Letter</h2>
+    <p style="text-align: center; padding: 40px; color: #666;">Document in progress...</p>
+</div>
+
+<div id="toc" class="content-section">
+    <h2>Table of Contents</h2>
+    <p><em>Introduction: These are the parts of my activities.</em></p>
+    
+    <ul class="link-list">
+        <li><a href="https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit?usp=drive_link" target="_blank">[ a. Rubric ]</a></li>
+        <li><a href="https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit?usp=drive_link" target="_blank">[ b. GRASPS Model ]</a></li>
+        
+        <li>
+            <span class="nested-label">c.1. Affective Assessment Tool</span>
+            <ul class="link-list sub-list">
+                <li><a href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit?usp=drive_link" target="_blank">[ c.1.1. Likert ]</a></li>
+                <li><a href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit?usp=drive_link" target="_blank">[ c.1.2. Sentence Completion ]</a></li>
+                <li><a href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit?usp=drive_link" target="_blank">[ c.1.3. Semantic Differential ]</a></li>
+                <li><a href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit?usp=drive_link" target="_blank">[ c.1.4. Checklist ]</a></li>
+            </ul>
+        </li>
+
+        <li><a href="https://docs.google.com/document/d/1bbtt440ofaiiEARVIKB7fb0wg_p85xS_/edit?usp=drive_link" target="_blank">[ c.2. Interview on Assessing Affective Domain ]</a></li>
+        <li><a href="https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit?usp=drive_link" target="_blank">[ d. Favorable and Not Favorable ]</a></li>
+        
+        <li><span style="color: #666;">[ e.1. Pointers ]</span></li>
+        
+        <li>
+            <span class="nested-label">e.2. Simulation</span>
+            <ul class="link-list sub-list">
+                <li style="color: #666;">[ Group Video ]</li>
+                <li style="color: #666;">[ Reflection ]</li>
+            </ul>
+        </li>
+        
+        <li><span style="color: #666;">[ f. Slide 123 ]</span></li>
+    </ul>
+</div>
+
+<div id="conclusion" class="content-section">
+    <h2>Conclusion</h2>
+    <ul class="link-list">
+        <li><a href="https://docs.google.com/document/d/1jt-JvRi0r6J1-aEpi6-30BnvULMFKtbT/edit?usp=drive_link" target="_blank">[ What I have learned ]</a></li>
+        <li><a href="https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit?usp=drive_link" target="_blank">[ Letter to myself ]</a></li>
+        <li><a href="https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit?usp=drive_link" target="_blank">[ Letter to my parent ]</a></li>
+    </ul>
+</div>
+
+<footer>
+    ALTEA MAE M. QUEZADA &copy; 2026 | FUTURE EDUCATOR | NAGLIBACAN, TINEG, ABRA
+</footer>
+
+<script>
+    function showSection(sectionId, btn) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(s => s.classList.remove('active-section'));
+        
+        // Remove active class from buttons
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(b => b.classList.remove('active'));
+        
+        // Show target section and highlight button
+        document.getElementById(sectionId).classList.add('active-section');
+        btn.classList.add('active');
+        
+        // Scroll to top of content
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
