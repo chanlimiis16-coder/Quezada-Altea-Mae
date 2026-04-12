@@ -16,7 +16,6 @@
       margin: 0;
       padding: 0;
       background-color: var(--royal-dark);
-      /* 🏰 ROYAL PATTERN BACKGROUND (Diamonds and Carbon Texture) */
       background-image: 
         linear-gradient(rgba(10, 10, 10, 0.92), rgba(10, 10, 10, 0.92)),
         url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
@@ -28,7 +27,6 @@
       box-sizing: border-box;
     }
 
-    /* 📸 PAPARAZZI FLASH EFFECT */
     .flash-active::after {
       content: "";
       position: absolute;
@@ -44,7 +42,6 @@
       100% { opacity: 0; }
     }
 
-    /* 💎 NAVIGATION BARS */
     .header-container {
       position: sticky;
       top: 0;
@@ -84,7 +81,6 @@
       border-color: #fcf6ba;
     }
 
-    /* 👑 CONTENT CARD */
     .main-content { padding: 40px 20px; }
     .section { display: none; max-width: 850px; margin: 0 auto; animation: entry 0.8s ease; }
 
@@ -104,7 +100,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 🖼️ PORTRAIT FRAME */
     .portrait-frame {
       width: 270px;
       height: 340px;
@@ -133,7 +128,6 @@
       margin: 0;
     }
 
-    /* 📋 LIST STYLES */
     .link-list { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
     
     .folder-content {
@@ -173,7 +167,7 @@
     <div class="card">
       <div class="portrait-frame">
         <div class="portrait-inner">
-          <img src="1234567890" class="profile-img" alt="Altea Portrait" onerror="this.src='1234567890.jpg';">
+          <img src="101" class="profile-img" alt="Altea Mae M. Quezada">
         </div>
       </div>
       <h1 class="name-text">Altea Mae M. Quezada</h1>
@@ -195,7 +189,7 @@
       <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba; text-align: center;">C. Table of Contents</h2>
       <div class="link-list">
         <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">a. Rubric</button>
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit')">b. GRASPS Model</button>
+        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPR_t30TUDtuCJog/edit')">b. GRASPS Model</button>
         <button class="diamond-btn" onclick="flashLink(this); toggleFol('c1')">c.1. Affective Tool ▾</button>
         <div id="c1" class="folder-content">
           <a class="sub-item" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit" target="_blank">c.1.1. Likert</a>
@@ -254,4 +248,5 @@
 </script>
 
 </body>
-</html>
+          </html>
+          
