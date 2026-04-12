@@ -3,162 +3,163 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Altea Mae M. Quezada | Royal E-Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --royal-dark: #0f0807;
-      --gold-foil: linear-gradient(45deg, #8a6d3b, #fcf6ba, #d4af37, #fbf5b7, #8a6d3b);
-      --diamond-glass: rgba(255, 255, 255, 0.12);
+      --royal-bg: #1a0b0a;
+      --gold-bright: #fcf6ba;
+      --gold-deep: #bf953f;
+      --gold-gradient: linear-gradient(45deg, #8a6d3b, #fcf6ba, #d4af37, #fbf5b7, #8a6d3b);
     }
 
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--royal-dark);
-      /* 🎨 ARTISTIC ROYAL WALLPAPER - Painted Mural Style */
+      background-color: var(--royal-bg);
+      /* 🏰 NEW ROYAL PATTERN DESIGN */
       background-image: 
-        linear-gradient(rgba(15, 8, 7, 0.8), rgba(15, 8, 7, 0.8)),
-        url("https://www.transparenttextures.com/patterns/french-stucco.png"), /* Painted texture */
-        url("https://www.transparenttextures.com/patterns/ornamental-print.png"); /* Carved Art Designs */
+        linear-gradient(rgba(26, 11, 10, 0.9), rgba(26, 11, 10, 0.9)),
+        url("https://www.transparenttextures.com/patterns/pinstripe-dark.png"),
+        url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
       background-attachment: fixed;
       color: #e0d5c1;
       min-height: 100vh;
-      border: 20px solid transparent;
-      border-image: var(--gold-foil) 30 stretch;
+      border: 15px solid transparent;
+      border-image: var(--gold-gradient) 30 stretch;
       box-sizing: border-box;
     }
 
-    /* 📸 LOCAL PAPARAZZI FLASH */
+    /* 📸 THE PAPARAZZI FLASH (Inside Button Only) */
     .flash-active::after {
       content: "";
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       background: white;
       animation: flash-burst 0.3s ease-out forwards;
-      z-index: 10;
+      z-index: 100;
     }
 
     @keyframes flash-burst {
       0% { opacity: 0; }
-      20% { opacity: 1; filter: brightness(3); }
+      20% { opacity: 1; }
       100% { opacity: 0; }
     }
 
-    /* 💎 DIAMOND NAVIGATION */
+    /* 📱 MAIN NAVIGATION BARS */
     .header-container {
       position: sticky;
       top: 0;
       z-index: 2000;
-      padding: 20px 0;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(20px);
-      border-bottom: 4px double #d4af37;
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.95);
+      border-bottom: 2px solid var(--gold-deep);
     }
 
     .navbar {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .diamond-btn {
-      background: var(--diamond-glass);
-      border: 1px solid rgba(212, 175, 55, 0.6);
-      color: #fcf6ba;
-      padding: 12px 28px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--gold-deep);
+      color: var(--gold-bright) !important; /* Forces letters to show */
+      padding: 12px 20px;
       font-family: 'Cinzel', serif;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: 0.3s;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      min-width: 120px;
+      display: block;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
 
     .diamond-btn:hover {
-      background: rgba(255, 255, 255, 0.18);
-      border-color: #fcf6ba;
-      transform: translateY(-3px);
+      background: rgba(191, 149, 63, 0.2);
+      border-color: white;
     }
 
-    /* 👑 CARVED ART CONTENT CARD */
-    .main-content { padding: 40px 20px; }
-    .section { display: none; max-width: 850px; margin: 0 auto; animation: entry 0.8s ease; }
+    /* 👑 CONTENT CARD */
+    .main-content { padding: 30px 15px; }
+    .section { display: none; max-width: 800px; margin: 0 auto; animation: fadeUp 0.6s ease; }
 
-    @keyframes entry {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .card {
-      background: rgba(25, 14, 12, 0.96);
-      /* Artistic background overlay inside the card */
-      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-      padding: 50px;
-      border: 2px solid #d4af37;
-      outline: 10px double rgba(212, 175, 55, 0.2);
-      outline-offset: -20px;
-      box-shadow: 0 0 70px rgba(0,0,0,1);
-      position: relative;
+      background: rgba(30, 15, 12, 0.98);
+      padding: 40px;
+      border: 1px solid var(--gold-deep);
+      box-shadow: 0 0 40px rgba(0,0,0,0.8);
     }
 
-    /* 🖼️ ROYAL PORTRAIT FRAME */
+    /* 🖼️ THE PICTURE FRAME */
     .portrait-frame {
-      width: 280px;
-      height: 350px;
-      margin: 0 auto 35px;
-      padding: 15px;
-      background: var(--gold-foil);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-      clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+      width: 240px;
+      height: 300px;
+      margin: 0 auto 30px;
+      padding: 10px;
+      background: var(--gold-gradient);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
     }
 
     .portrait-inner {
       width: 100%;
       height: 100%;
-      background: #000;
+      background: #222;
       overflow: hidden;
     }
 
-    .profile-img { width: 100%; height: 100%; object-fit: cover; }
+    .profile-img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      display: block;
+    }
 
     .name-text {
       font-family: 'Cinzel', serif;
       text-align: center;
-      font-size: 40px;
-      background: var(--gold-foil);
+      font-size: 32px;
+      background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 0;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* 📂 TABLE OF CONTENTS / CONCLUSION */
-    .link-list { display: flex; flex-direction: column; gap: 18px; margin-top: 40px; }
+    /* 📋 LISTS (TOC & CONCLUSION) */
+    .link-list { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
     
+    .toc-item {
+      width: 100%;
+      text-align: left;
+    }
+
     .folder-content {
       display: none;
-      padding: 10px 0 10px 35px;
-      border-left: 2px solid #d4af37;
-      margin: 5px 0 15px 0;
-      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 0 10px 25px;
+      border-left: 1px solid var(--gold-deep);
+      background: rgba(255, 255, 255, 0.02);
     }
 
-    .sub-item {
+    .sub-link {
       display: block;
-      padding: 12px;
-      color: #e0d5c1;
+      padding: 8px;
+      color: #ccc;
       text-decoration: none;
-      font-size: 15px;
-      transition: 0.3s;
-      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
     }
 
-    .sub-item:hover { color: #fcf6ba; padding-left: 15px; background: rgba(212, 175, 55, 0.1); }
+    .sub-link:hover { color: var(--gold-bright); }
 
   </style>
 </head>
@@ -166,10 +167,10 @@
 
 <div class="header-container">
   <div class="navbar">
-    <button class="diamond-btn" onclick="openTab('profile', this)">Profile</button>
-    <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">Cover Letter</button>
-    <button class="diamond-btn" onclick="openTab('toc', this)">Contents</button>
-    <button class="diamond-btn" onclick="openTab('conclusion', this)">Conclusion</button>
+    <button class="diamond-btn" onclick="openTab('profile', this)">A. Profile</button>
+    <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">B. Cover Letter</button>
+    <button class="diamond-btn" onclick="openTab('toc', this)">C. TOC</button>
+    <button class="diamond-btn" onclick="openTab('conclusion', this)">D. Conclusion</button>
   </div>
 </div>
 
@@ -179,49 +180,47 @@
     <div class="card">
       <div class="portrait-frame">
         <div class="portrait-inner">
-          <img src="1" class="profile-img" alt="Altea" onerror="this.src='altea-portrait.jpg.jpg'">
+          <img src="1.jpg" class="profile-img" 
+               onerror="this.onerror=null; this.src='altea-portrait.jpg.jpg'; this.alt='Altea Mae';">
         </div>
       </div>
       <h1 class="name-text">Altea Mae M. Quezada</h1>
-      <p style="text-align: center; letter-spacing: 7px; color: #d4af37; font-size: 12px; margin-top: 15px; font-weight: 600;">TINGGUIAN HERITAGE | FUTURE EDUCATOR</p>
+      <p style="text-align: center; letter-spacing: 4px; color: var(--gold-deep); font-size: 11px; margin-top: 10px;">TINGGUIAN HERITAGE | FUTURE EDUCATOR</p>
       
-      <div style="margin-top: 40px; line-height: 2.3; text-align: justify; font-size: 16px; color: #d1c4b2;">
-        Hi! I am <b>Altea Mae M. Quezada</b>, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra, a place that shaped who I am today.
+      <div style="margin-top: 30px; line-height: 1.8; text-align: justify; color: #d1c4b2;">
+        Hi! I am <b>Altea Mae M. Quezada</b>, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra.
         <br><br>
-        I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada, who taught me the values of hard work, perseverance, and kindness.
+        I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada. Growing up, I learned the importance of culture, family, and staying true to one’s roots.
       </div>
-      <p style="font-family: 'Playfair Display', serif; font-style: italic; text-align: center; color: #fcf6ba; font-size: 24px; margin-top: 40px; border-top: 1px solid rgba(212,175,55,0.3); padding-top: 20px;">“In progress, but with purpose.”</p>
     </div>
   </div>
 
   <div id="toc" class="section">
     <div class="card">
-      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba; text-align: center; font-size: 30px;">Table of Contents</h2>
+      <h2 style="font-family: 'Cinzel', serif; color: var(--gold-bright); text-align: center;">C. Table of Contents</h2>
       <div class="link-list">
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">a. Rubric</button>
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit')">b. GRASPS Model</button>
-        <button class="diamond-btn" onclick="flashLink(this); toggleFol('c1')">c.1. Affective Tool ▾</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this, 'https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">a. Rubric</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this, 'https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit')">b. GRASPS Model</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this); toggleFol('c1')">c.1. Affective Tool ▾</button>
         <div id="c1" class="folder-content">
-          <a class="sub-item" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit" target="_blank">c.1.1. Likert</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit" target="_blank">c.1.2. Sentence Completion</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit" target="_blank">c.1.3. Semantic Differential</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit" target="_blank">c.1.4. Checklist</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit" target="_blank">c.1.5. Written Reflection</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit" target="_blank">c.1.1. Likert</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit" target="_blank">c.1.2. Sentence Completion</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit" target="_blank">c.1.5. Written Reflection</a>
         </div>
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1bbtt440ofaiiEARVIKB7fb0wg_p85xS_/edit?usp=drive_link&ouid=116787142773177870820&rtpof=true&sd=true')">c.2. Interview 🔗</button>
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit')">d. Favorable & Not Favorable</button>
-        <button class="diamond-btn" onclick="flashLink(this)">f. Slide 123</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this, 'https://docs.google.com/document/d/1bbtt440ofaiiEARVIKB7fb0wg_p85xS_/edit?usp=drive_link')">c.2. Interview</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this, 'https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit')">d. Favorable & Not Favorable</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this)">f. Slide 123</button>
       </div>
     </div>
   </div>
 
   <div id="conclusion" class="section">
     <div class="card">
-      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba; text-align: center; font-size: 30px;">Conclusion</h2>
+      <h2 style="font-family: 'Cinzel', serif; color: var(--gold-bright); text-align: center;">D. Conclusion</h2>
       <div class="link-list">
-        <button class="diamond-btn" onclick="flashLink(this)">What I Have Learned</button>
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit')">Letter to Myself</button>
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit')">Letter to Parent</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this)">What I Have Learned</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this, 'https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit')">Letter to Myself</button>
+        <button class="diamond-btn toc-item" onclick="flashLink(this, 'https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit')">Letter to Parents</button>
       </div>
     </div>
   </div>
@@ -231,9 +230,9 @@
 <script>
   function flashLink(btn, url) {
     btn.classList.remove('flash-active');
-    void btn.offsetWidth;
+    void btn.offsetWidth; // Reset animation
     btn.classList.add('flash-active');
-    if(url) setTimeout(() => window.open(url, '_blank'), 300);
+    if(url) setTimeout(() => window.open(url, '_blank'), 350);
   }
 
   function openTab(id, btn) {
@@ -241,7 +240,6 @@
     setTimeout(() => {
       document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
       document.getElementById(id).style.display = 'block';
-      window.scrollTo(0,0);
     }, 250);
   }
 
