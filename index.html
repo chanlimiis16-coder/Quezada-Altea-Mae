@@ -1,0 +1,302 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altea Mae M. Quezada | E-Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --baggie-brown: #C19A6B;
+      --deep-tan: #a67c52;
+      --royal-gold: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+      --glass-white: rgba(255, 255, 255, 0.2);
+      --text-dark: #3e2723;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--baggie-brown);
+      background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* 📸 CAMERA FLASH EFFECT */
+    #flash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 0;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    .flash-anim {
+      animation: flash-action 0.3s ease-out;
+    }
+
+    @keyframes flash-action {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* 💎 GLASSY DIAMOND TABS */
+    .header-container {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 2000;
+      padding: 15px 0;
+      background: rgba(62, 39, 35, 0.15);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      background: var(--glass-white);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 12px 24px;
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* 🖼️ ROYAL PORTRAIT FRAME */
+    .main-content { padding: 40px 20px; }
+    .section { display: none; max-width: 750px; margin: 0 auto; animation: fadeIn 0.8s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px;
+      border-radius: 2px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      border: 1px solid var(--deep-tan);
+    }
+
+    .portrait-wrapper {
+      position: relative;
+      width: 240px;
+      height: 320px;
+      margin: 0 auto 35px;
+      padding: 10px;
+      background: var(--royal-gold);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .portrait-inner {
+      width: 100%;
+      height: 100%;
+      background: #eee;
+      border: 1px solid #5d4037;
+      overflow: hidden;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name-title {
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      font-size: 32px;
+      color: #3e2723;
+      margin: 0;
+    }
+
+    .quote-box {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-style: italic;
+      color: var(--deep-tan);
+      margin-top: 40px;
+      font-size: 20px;
+    }
+
+    /* 📋 CLICK SYSTEM LINKS */
+    .link-label {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      margin: 10px 0;
+      background: rgba(193, 154, 107, 0.1);
+      border: 1px solid rgba(166, 124, 82, 0.3);
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: 0.3s;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .link-label:hover {
+      background: var(--deep-tan);
+      color: white;
+      padding-left: 30px;
+    }
+
+    .folder-content {
+      display: none;
+      padding-left: 20px;
+      border-left: 2px solid var(--deep-tan);
+      margin-bottom: 20px;
+    }
+
+    .sub-link {
+      display: block;
+      padding: 12px;
+      color: #5d4037;
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .sub-link:hover { color: black; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+
+<div id="flash"></div>
+
+<div class="header-container">
+  <div class="navbar">
+    <button class="nav-btn" onclick="toggleSection('profile')">A. Profile</button>
+    <button class="nav-btn" onclick="jump('https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">B. Cover Letter</button>
+    <button class="nav-btn" onclick="toggleSection('toc')">C. TOC</button>
+    <button class="nav-btn" onclick="toggleSection('conclusion')">D. Conclusion</button>
+  </div>
+</div>
+
+<div class="main-content">
+  
+  <div id="profile" class="section" style="display: block;">
+    <div class="card">
+      <div class="portrait-wrapper">
+        <div class="portrait-inner">
+          <img src="altea-portrait.jpg" class="profile-img" alt="Altea Mae M. Quezada">
+        </div>
+      </div>
+      <h1 class="name-title">Altea Mae M. Quezada</h1>
+      <p style="text-align: center; letter-spacing: 3px; font-size: 12px; text-transform: uppercase; margin-top: 10px;">Proud Tingguian | BEED Student</p>
+      
+      <div style="margin-top: 40px; line-height: 1.9; text-align: justify; font-size: 15px;">
+        Hi! I am <b>Altea Mae M. Quezada</b>, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra, a place that shaped who I am today.
+        <br><br>
+        I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada, who taught me the values of hard work, perseverance, and kindness. Growing up in a close-knit community, I learned the importance of culture, family, and staying true to one’s roots.
+        <br><br>
+        I am passionate about teaching because I believe every child deserves guidance, encouragement, and a safe space to grow. I want to be the kind of teacher who not only shares knowledge but also inspires confidence, curiosity, and love for learning in every student I meet.
+        <br><br>
+        When I’m not studying, I enjoy reflecting on life, exploring new ideas, and thinking of creative ways to make learning fun and meaningful. My journey as a future educator is just beginning, but I am ready to embrace every challenge and opportunity with a big heart and an open mind.
+      </div>
+
+      <div class="quote-box">“In progress, but with purpose.”</div>
+    </div>
+  </div>
+
+  <div id="toc" class="section">
+    <div class="card">
+      <h2 style="font-family: 'Cinzel', serif; margin-bottom: 5px;">Table of Contents</h2>
+      <p style="margin-bottom: 30px;"><i>Introduction: These are the parts of my activities.</i></p>
+      
+      <a class="link-label" href="https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit?usp=drive_link" target="_blank">a. Rubric</a>
+      <a class="link-label" href="https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit?usp=drive_link" target="_blank">b. GRASPS Model</a>
+      
+      <div class="link-label" onclick="toggleFolder('c1_fold')">c.1. Affective Assessment Tool ▾</div>
+      <div id="c1_fold" class="folder-content">
+        <a class="sub-link" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit?usp=drive_link" target="_blank">c.1.1. Likert</a>
+        <a class="sub-link" href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit?usp=drive_link" target="_blank">c.1.2. Sentence Completion</a>
+        <a class="sub-link" href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit?usp=drive_link" target="_blank">c.1.3. Semantic Differential</a>
+        <a class="sub-link" href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit?usp=drive_link" target="_blank">c.1.4. Checklist</a>
+        <a class="sub-link" href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit?usp=drive_link" target="_blank">c.1.5. Written Reflection</a>
+      </div>
+
+      <div class="link-label">c.2. Interview on Assessing Affective Domain</div>
+      <a class="link-label" href="https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit?usp=drive_link" target="_blank">d. Favorable and Not Favorable</a>
+      <div class="link-label">e.1. Pointers</div>
+      
+      <div class="link-label" onclick="toggleFolder('e2_fold')">e.2. Simulation ▾</div>
+      <div id="e2_fold" class="folder-content">
+        <div class="sub-link">Group Video</div>
+        <div class="sub-link">Reflection</div>
+      </div>
+
+      <div class="link-label">f. Slide 123</div>
+    </div>
+  </div>
+
+  <div id="conclusion" class="section">
+    <div class="card">
+      <h2 style="font-family: 'Cinzel', serif;">D. Conclusion</h2>
+      <div class="link-label">What I have learned</div>
+      <a class="link-label" href="https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit?usp=drive_link" target="_blank">Letter to myself</a>
+      <a class="link-label" href="https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit?usp=drive_link" target="_blank">Letter to my parent</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function triggerFlash() {
+    const flashEl = document.getElementById('flash');
+    flashEl.classList.remove('flash-anim');
+    void flashEl.offsetWidth; 
+    flashEl.classList.add('flash-anim');
+  }
+
+  function toggleSection(id) {
+    triggerFlash();
+    setTimeout(() => {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      window.scrollTo(0,0);
+    }, 80);
+  }
+
+  function jump(url) {
+    triggerFlash();
+    setTimeout(() => {
+      window.open(url, '_blank');
+    }, 150);
+  }
+
+  function toggleFolder(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>
