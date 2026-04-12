@@ -6,8 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --royal-dark: #1a0f0d; /* Darker, richer brown */
-      --deep-mahogany: #2d1b18;
+      --royal-dark: #1a0f0d; 
+      --deep-mahogany: #251614;
       --gold-accent: linear-gradient(45deg, #a67c52, #fcf6ba, #bf953f, #fbf5b7, #8a6034);
       --glass-diamond: rgba(255, 255, 255, 0.08);
       --diamond-border: rgba(255, 255, 255, 0.2);
@@ -20,7 +20,39 @@
       background: radial-gradient(circle at center, #2d1b18 0%, #1a0f0d 100%);
       background-attachment: fixed;
       color: #e0d5c1;
-      overflow-x: hidden;
+      min-height: 100vh;
+      /* 👑 CARVED ROYAL BORDER AROUND PAGE */
+      border: 15px solid transparent;
+      border-image: url("https://www.transparenttextures.com/patterns/black-paper.png") 30 stretch;
+      box-shadow: inset 0 0 0 5px #bf953f, inset 0 0 100px #000;
+    }
+
+    /* THE CARVED DESIGN OVERLAY */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 20px solid transparent;
+      border-image: var(--gold-accent) 1;
+      pointer-events: none;
+      z-index: 3000;
+      opacity: 0.4;
+    }
+
+    /* 📸 LOCAL PAPARAZZI FLASH EFFECT */
+    .flash-active::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: white;
+      animation: local-flash 0.3s ease-out forwards;
+      z-index: 10;
+    }
+
+    @keyframes local-flash {
+      0% { opacity: 0; }
+      30% { opacity: 1; filter: blur(5px); }
+      100% { opacity: 0; }
     }
 
     /* 💎 DIAMOND BUTTON STYLING (Universal) */
@@ -29,7 +61,7 @@
       backdrop-filter: blur(15px);
       border: 1px solid var(--diamond-border);
       color: #fcf6ba;
-      padding: 12px 24px;
+      padding: 14px 24px;
       font-family: 'Cinzel', serif;
       font-weight: bold;
       font-size: 13px;
@@ -38,34 +70,18 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       text-decoration: none;
       display: inline-block;
       text-align: center;
     }
 
     .diamond-btn:hover {
-      border-color: #bf953f;
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-      box-shadow: 0 0 15px rgba(191, 149, 63, 0.4);
-    }
-
-    /* 📸 LOCAL PAPARAZZI FLASH */
-    .flash-active::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: white;
-      animation: local-flash 0.4s ease-out forwards;
-      z-index: 10;
-    }
-
-    @keyframes local-flash {
-      0% { opacity: 0; }
-      20% { opacity: 1; }
-      100% { opacity: 0; }
+      border-color: #fcf6ba;
+      background: rgba(255, 255, 255, 0.12);
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(191, 149, 63, 0.5);
     }
 
     /* 📱 NAVIGATION */
@@ -75,9 +91,9 @@
       width: 100%;
       z-index: 2000;
       padding: 20px 0;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(191, 149, 63, 0.3);
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #bf953f;
     }
 
     .navbar {
@@ -88,39 +104,39 @@
     }
 
     /* 👑 MAIN CONTENT CARD */
-    .main-content { padding: 40px 20px; }
-    .section { display: none; max-width: 800px; margin: 0 auto; animation: slideUp 0.8s ease; }
+    .main-content { padding: 60px 20px; }
+    .section { display: none; max-width: 850px; margin: 0 auto; animation: slideUp 0.8s ease; }
 
     @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     .card {
-      background: rgba(45, 27, 24, 0.7);
-      backdrop-filter: blur(20px);
+      background: rgba(30, 20, 18, 0.85);
+      backdrop-filter: blur(25px);
       padding: 50px;
-      border: 1px solid rgba(191, 149, 63, 0.2);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(191, 149, 63, 0.4);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.8);
       position: relative;
     }
 
     /* 🖼️ ROYAL PORTRAIT */
     .portrait-wrapper {
       position: relative;
-      width: 250px;
-      height: 330px;
+      width: 260px;
+      height: 340px;
       margin: 0 auto 40px;
-      padding: 12px;
+      padding: 15px;
       background: var(--gold-accent);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.7);
     }
 
     .portrait-inner {
       width: 100%;
       height: 100%;
       background: #000;
-      border: 1px solid #3e2723;
+      border: 2px solid #1a0f0d;
       overflow: hidden;
     }
 
@@ -129,11 +145,12 @@
     h1.name-title {
       font-family: 'Cinzel', serif;
       text-align: center;
-      font-size: 36px;
+      font-size: 38px;
       background: var(--gold-accent);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 0;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.5);
     }
 
     .quote-box {
@@ -143,36 +160,32 @@
       color: #fcf6ba;
       margin-top: 50px;
       font-size: 22px;
-      border-top: 1px solid rgba(191, 149, 63, 0.3);
-      padding-top: 20px;
+      border-top: 2px double rgba(191, 149, 63, 0.5);
+      padding-top: 25px;
     }
 
-    /* 📂 EXPENSIVE TOC CLICK SYSTEM */
-    .toc-container { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
-
-    .toc-item {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-    }
+    /* 📂 EXPENSIVE TOC */
+    .toc-container { display: flex; flex-direction: column; gap: 15px; margin-top: 35px; }
+    .toc-item { width: 100%; box-sizing: border-box; }
 
     .folder-content {
       display: none;
-      padding: 10px 0 10px 30px;
-      border-left: 1px solid var(--gold-accent);
+      padding: 10px 0 10px 40px;
+      border-left: 2px solid #bf953f;
       margin: 5px 0 15px 0;
     }
 
-    .sub-item {
+    .sub-link {
       display: block;
-      padding: 10px;
+      padding: 12px;
       color: #e0d5c1;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
       transition: 0.3s;
+      font-weight: 400;
     }
 
-    .sub-item:hover { color: #fcf6ba; padding-left: 10px; }
+    .sub-link:hover { color: #fcf6ba; transform: translateX(10px); }
 
   </style>
 </head>
@@ -197,47 +210,42 @@
         </div>
       </div>
       <h1 class="name-title">Altea Mae M. Quezada</h1>
-      <p style="text-align: center; letter-spacing: 5px; color: #a67c52; font-size: 11px; text-transform: uppercase; margin-top: 10px;">Tingguian Heritage | Future Educator</p>
+      <p style="text-align: center; letter-spacing: 6px; color: #bf953f; font-size: 12px; text-transform: uppercase; margin-top: 15px;">Tingguian Heritage | Future Educator</p>
       
-      <div style="margin-top: 40px; line-height: 2; text-align: justify; font-weight: 300;">
+      <div style="margin-top: 40px; line-height: 2.2; text-align: justify; font-size: 16px;">
         Hi! I am <b>Altea Mae M. Quezada</b>, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra, a place that shaped who I am today.
         <br><br>
         I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada, who taught me the values of hard work, perseverance, and kindness. Growing up in a close-knit community, I learned the importance of culture, family, and staying true to one’s roots.
         <br><br>
-        I am passionate about teaching because I believe every child deserves guidance, encouragement, and a safe space to grow. I want to be the kind of teacher who not only shares knowledge but also inspires confidence, curiosity, and love for learning in every student I meet.
+        I am passionate about teaching because I believe every child deserves guidance, encouragement, and a safe space to grow.
       </div>
-
       <div class="quote-box">“In progress, but with purpose.”</div>
     </div>
   </div>
 
   <div id="toc" class="section">
     <div class="card">
-      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba;">Table of Contents</h2>
-      <p style="font-size: 14px; opacity: 0.7;"><i>Introduction: These are the parts of my activities.</i></p>
-      
+      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba;">C. Table of Contents</h2>
       <div class="toc-container">
         <button class="diamond-btn toc-item" onclick="paparazzi(this, 'https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">a. Rubric</button>
         <button class="diamond-btn toc-item" onclick="paparazzi(this, 'https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit')">b. GRASPS Model</button>
-        
         <button class="diamond-btn toc-item" onclick="paparazzi(this); toggleFolder('c1_fold')">c.1. Affective Assessment Tool ▾</button>
         <div id="c1_fold" class="folder-content">
-          <a class="sub-item" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit" target="_blank">c.1.1. Likert</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit" target="_blank">c.1.2. Sentence Completion</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit" target="_blank">c.1.3. Semantic Differential</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit" target="_blank">c.1.4. Checklist</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit" target="_blank">c.1.5. Written Reflection</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit" target="_blank">c.1.1. Likert</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit" target="_blank">c.1.2. Sentence Completion</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit" target="_blank">c.1.3. Semantic Differential</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit" target="_blank">c.1.4. Checklist</a>
+          <a class="sub-link" href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit" target="_blank">c.1.5. Written Reflection</a>
         </div>
-
-        <button class="diamond-btn toc-item">c.2. Interview</button>
+        <button class="diamond-btn toc-item" onclick="paparazzi(this)">c.2. Interview</button>
         <button class="diamond-btn toc-item" onclick="paparazzi(this, 'https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit')">d. Favorable and Not Favorable</button>
-        <button class="diamond-btn toc-item">e.1. Pointers</button>
-        
+        <button class="diamond-btn toc-item" onclick="paparazzi(this)">e.1. Pointers</button>
         <button class="diamond-btn toc-item" onclick="paparazzi(this); toggleFolder('e2_fold')">e.2. Simulation ▾</button>
         <div id="e2_fold" class="folder-content">
-          <a class="sub-item" href="#">Group Video</a>
-          <a class="sub-item" href="#">Reflection</a>
+          <a class="sub-link" href="#">Group Video</a>
+          <a class="sub-link" href="#">Reflection</a>
         </div>
+        <button class="diamond-btn toc-item" onclick="paparazzi(this)">f. Slide 123</button>
       </div>
     </div>
   </div>
@@ -246,7 +254,7 @@
     <div class="card">
       <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba;">D. Conclusion</h2>
       <div class="toc-container">
-        <button class="diamond-btn toc-item">What I have learned</button>
+        <button class="diamond-btn toc-item" onclick="paparazzi(this, 'URL_HERE_LEARNED')">What I have learned</button>
         <button class="diamond-btn toc-item" onclick="paparazzi(this, 'https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit')">Letter to myself</button>
         <button class="diamond-btn toc-item" onclick="paparazzi(this, 'https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit')">Letter to my parent</button>
       </div>
@@ -258,13 +266,10 @@
 <script>
   function paparazzi(btn, url) {
     btn.classList.remove('flash-active');
-    void btn.offsetWidth; // Trigger reflow
+    void btn.offsetWidth; 
     btn.classList.add('flash-active');
-    
-    if(url) {
-      setTimeout(() => {
-        window.open(url, '_blank');
-      }, 300);
+    if(url && url !== 'URL_HERE_LEARNED') {
+      setTimeout(() => { window.open(url, '_blank'); }, 350);
     }
   }
 
@@ -274,7 +279,7 @@
       document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
       document.getElementById(id).style.display = 'block';
       window.scrollTo(0,0);
-    }, 200);
+    }, 250);
   }
 
   function toggleFolder(id) {
