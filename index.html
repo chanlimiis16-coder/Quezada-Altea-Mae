@@ -2,22 +2,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altea Mae M. Quezada | Queen's Gallery Portfolio</title>
+    <title>Altea Mae M. Quezada | Queen's Gallery</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --antique-beige: #e5d3b3;
             --deep-bronze: #5d4037;
             --royal-gold: #b8860b;
-            --dark-glass: rgba(45, 30, 20, 0.4);
+            --dark-glass: rgba(45, 30, 20, 0.6);
             --diamond-white: #ffffff;
-            --silver-trim: #c0c0c0;
             --parchment: #fdf5e6;
         }
 
         body {
             background-color: #d2b48c;
-            /* Victorian Damask Pattern */
             background-image: 
                 radial-gradient(circle at 0% 50%, rgba(93, 64, 55, 0.05) 9px, transparent 10px),
                 radial-gradient(circle at 100% 50%, rgba(93, 64, 55, 0.05) 9px, transparent 10px),
@@ -31,176 +29,131 @@
             align-items: center;
             min-height: 100vh;
             color: #2e1a12;
+            padding-top: 50px; /* Space for missing header */
         }
 
-        header {
-            text-align: center;
-            padding: 50px 20px;
+        /* Glass Box for Tabs */
+        .nav-glass-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--royal-gold);
+            padding: 20px;
+            border-radius: 2px;
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
         }
 
-        h1 {
-            font-family: 'Cinzel', serif;
-            color: var(--deep-bronze);
-            letter-spacing: 8px;
-            margin: 0;
-            font-size: 3rem;
-            text-shadow: 2px 2px 0px var(--royal-gold);
-        }
-
-        /* Darkened Glass Tabs */
         .nav-container {
             display: flex;
-            gap: 12px;
-            margin-bottom: 50px;
-            position: sticky;
-            top: 20px;
-            z-index: 1000;
+            gap: 10px;
+            flex-wrap: wrap; /* Allows stacking on mobile */
+            justify-content: center;
+            width: 100%;
         }
 
         .tab-btn {
             background: var(--dark-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             color: var(--parchment);
             border: 1px solid var(--royal-gold);
-            padding: 18px 30px;
+            padding: 15px 20px;
             cursor: pointer;
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: bold;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             text-transform: uppercase;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        .tab-btn:hover {
-            background: rgba(93, 64, 55, 0.7);
-            transform: translateY(-5px);
+            flex: 1 1 150px; /* Responsive size */
+            max-width: 200px;
+            text-align: center;
         }
 
         .tab-btn.active {
             background: var(--diamond-white);
             color: var(--deep-bronze);
-            box-shadow: 0 0 30px var(--diamond-white), 0 0 10px var(--royal-gold);
-            transform: scale(1.1);
-            border: 2px solid var(--royal-gold);
+            box-shadow: 0 0 20px var(--diamond-white);
         }
 
-        /* Content Container - Darker Backdrop */
+        /* Content Sections */
         .content-wrapper {
-            width: 90%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 100px;
+            width: 95%;
+            max-width: 900px;
+            margin-bottom: 50px;
         }
 
         .content-section {
             display: none;
-            width: 100%;
-            background: rgba(45, 30, 20, 0.85); /* Darkened background for content */
+            background: rgba(45, 30, 20, 0.9);
             color: var(--parchment);
-            border: 2px solid var(--royal-gold);
-            padding: 60px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-            animation: fadeIn 0.5s ease;
-            position: relative;
+            border: 1px solid var(--royal-gold);
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Queen Portrait Frame */
+        /* Portrait Frame Fix */
         .portrait-frame {
-            position: relative;
-            padding: 25px;
-            background: #4e342e; /* Dark wood base */
-            border: 8px solid var(--royal-gold);
-            outline: 4px solid var(--deep-bronze);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            margin: 0 auto 30px auto;
+            padding: 15px;
+            background: linear-gradient(145deg, #5d4037, #b8860b, #5d4037);
+            border: 4px solid var(--royal-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
             display: inline-block;
         }
 
-        .portrait-frame::after {
-            content: '✿';
-            position: absolute;
-            top: -20px; left: 50%;
-            transform: translateX(-50%);
-            color: var(--royal-gold);
-            font-size: 2rem;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
-
         .profile-pic {
-            width: 300px;
-            height: 380px;
+            width: 220px;
+            height: 280px;
             object-fit: cover;
-            border: 2px solid var(--royal-gold);
+            border: 2px solid white;
             display: block;
         }
 
-        /* Organized Table of Contents */
-        .toc-container { text-align: left; max-width: 800px; margin: 0 auto; }
-        
-        .toc-list { list-style: none; padding: 0; }
-        
-        .toc-item {
-            margin: 25px 0;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(184, 134, 11, 0.3);
-        }
-
-        .toc-link {
-            color: var(--royal-gold);
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        .toc-link:hover { color: var(--diamond-white); text-shadow: 0 0 10px var(--royal-gold); }
-
-        .nested-list {
+        /* TOC Nesting Logic */
+        .nested-content {
+            display: none; /* Hidden by default */
             list-style: none;
-            padding-left: 30px;
-            margin-top: 15px;
-            border-left: 2px solid var(--royal-gold);
+            padding-left: 25px;
+            margin-top: 10px;
+            border-left: 1px solid var(--royal-gold);
         }
 
-        .nested-list li { margin: 12px 0; }
-
-        .nested-link {
-            color: var(--parchment);
-            text-decoration: none;
-            font-size: 1rem;
-            opacity: 0.8;
-            transition: 0.3s;
+        .expandable-label {
+            cursor: pointer;
+            color: var(--royal-gold);
+            font-family: 'Cinzel', serif;
+            text-decoration: underline;
+            display: block;
+            margin: 15px 0;
         }
 
-        .nested-link:hover { opacity: 1; color: var(--royal-gold); padding-left: 10px; }
+        .toc-list { list-style: none; padding: 0; }
+        .toc-list li { margin: 15px 0; }
+        .toc-list a { color: var(--parchment); text-decoration: none; }
+        .toc-list a:hover { color: var(--royal-gold); }
 
-        .status-tag { color: #8d6e63; font-style: italic; font-size: 0.9rem; }
+        h2 { font-family: 'Cinzel', serif; color: var(--royal-gold); text-align: center; }
+        .biography { line-height: 1.8; text-align: center; font-size: 1rem; }
 
-        h2 { font-family: 'Cinzel', serif; color: var(--royal-gold); text-align: center; border-bottom: 1px double var(--royal-gold); padding-bottom: 15px; }
-        
-        .biography { text-align: center; line-height: 2; font-size: 1.1rem; }
+        @media (max-width: 600px) {
+            .tab-btn { flex: 1 1 40%; font-size: 0.7rem; padding: 10px; }
+            .content-section { padding: 20px; }
+            h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>ROYAL PORTFOLIO</h1>
-</header>
-
-<nav class="nav-container">
-    <button class="tab-btn" onclick="toggleSection('profile', this)">A. Profile</button>
-    <button class="tab-btn" onclick="toggleSection('cover', this)">B. Cover Letter</button>
-    <button class="tab-btn" onclick="toggleSection('toc', this)">C. Table of Contents</button>
-    <button class="tab-btn" onclick="toggleSection('conclusion', this)">D. Conclusion</button>
-</nav>
+<div class="nav-glass-box">
+    <nav class="nav-container">
+        <button class="tab-btn" onclick="toggleSection('profile', this)">A. Profile</button>
+        <button class="tab-btn" onclick="toggleSection('cover', this)">B. Cover Letter</button>
+        <button class="tab-btn" onclick="toggleSection('toc', this)">C. TOC</button>
+        <button class="tab-btn" onclick="toggleSection('conclusion', this)">D. Conclusion</button>
+    </nav>
+</div>
 
 <div class="content-wrapper">
     <div id="profile" class="content-section">
@@ -211,63 +164,54 @@
             <h2>Altea Mae M. Quezada</h2>
         </div>
         <div class="biography">
-            <p>Hi! I am Altea Mae M. Quezada, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra, a place that shaped who I am today.</p>
-            <p>I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada, who taught me the values of hard work, perseverance, and kindness. Growing up in a close-knit community, I learned the importance of culture, family, and staying true to one’s roots.</p>
-            <p>I am passionate about teaching because I believe every child deserves guidance, encouragement, and a safe space to grow. I want to be the kind of teacher who shares knowledge and inspires curiosity.</p>
-            <p style="font-style: italic; color: var(--royal-gold); font-size: 1.4rem; margin-top: 30px;">“In progress, but with purpose.”</p>
+            <p>Hi! I am Altea Mae M. Quezada, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures.</p>
+            <p>I was born on April 11, 2005. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra.</p>
+            <p style="font-style: italic; color: var(--royal-gold); margin-top: 20px;">“In progress, but with purpose.”</p>
         </div>
     </div>
 
     <div id="cover" class="content-section">
         <h2>Cover Letter</h2>
-        <div style="text-align: center; padding: 50px;">
-            <p>Official cover letter documentation for Altea Mae M. Quezada.</p>
+        <div style="text-align: center; padding: 20px;">
             <a href="https://docs.google.com/document/d/1Pf_AnbbugcHaltoZLhQSuD-2dyyCRwAU/edit?usp=drive_link" target="_blank" class="tab-btn" style="text-decoration: none; display: inline-block;">Open Document</a>
         </div>
     </div>
 
     <div id="toc" class="content-section">
         <h2>Table of Contents</h2>
-        <div class="toc-container">
-            <p><em>Introduction: These are the parts of my activities.</em></p>
-            <ul class="toc-list">
-                <li class="toc-item"><a href="https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit?usp=drive_link" class="toc-link" target="_blank">[ a. Rubric ]</a></li>
-                <li class="toc-item"><a href="https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit?usp=drive_link" class="toc-link" target="_blank">[ b. GRASPS Model ]</a></li>
-                <li class="toc-item">
-                    <span class="toc-link" style="cursor: default;">[ c.1. Affective Assessment Tool ]</span>
-                    <ul class="nested-list">
-                        <li><a href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit?usp=drive_link" class="nested-link" target="_blank">c.1.1. Likert</a></li>
-                        <li><a href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit?usp=drive_link" class="nested-link" target="_blank">c.1.2. Sentence Completion</a></li>
-                        <li><a href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit?usp=drive_link" class="nested-link" target="_blank">c.1.3. Semantic Differential</a></li>
-                        <li><a href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit?usp=drive_link" class="nested-link" target="_blank">c.1.4. Checklist</a></li>
-                        <li><a href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit?usp=drive_link" class="nested-link" target="_blank">c.1.5. Additional Tool</a></li>
-                    </ul>
-                </li>
-                <li class="toc-item"><a href="https://docs.google.com/document/d/1bbtt440ofaiiEARVIKB7fb0wg_p85xS_/edit?usp=drive_link" class="toc-link" target="_blank">[ c.2. Interview on Assessing Affective Domain ]</a></li>
-                <li class="toc-item"><a href="https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit?usp=drive_link" class="toc-link" target="_blank">[ d. Favorable and Not Favorable ]</a></li>
-                <li class="toc-item">
-                    <span class="toc-link" style="opacity: 0.5;">[ e.1. Pointers ]</span> <span class="status-tag">(In Progress)</span>
-                </li>
-                <li class="toc-item">
-                    <span class="toc-link" style="cursor: default;">[ e.2. Simulation ]</span>
-                    <ul class="nested-list">
-                        <li><span class="nested-link" style="opacity: 0.5;">Group Video</span> <span class="status-tag">(In Progress)</span></li>
-                        <li><span class="nested-link" style="opacity: 0.5;">Reflection</span> <span class="status-tag">(In Progress)</span></li>
-                    </ul>
-                </li>
-                <li class="toc-item">
-                    <span class="toc-link" style="opacity: 0.5;">[ f. Slide 123 ]</span> <span class="status-tag">(In Progress)</span>
-                </li>
-            </ul>
-        </div>
+        <ul class="toc-list">
+            <li><a href="https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit?usp=drive_link" target="_blank">[ a. Rubric ]</a></li>
+            <li><a href="https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit?usp=drive_link" target="_blank">[ b. GRASPS Model ]</a></li>
+            
+            <li>
+                <span class="expandable-label" onclick="toggleNested('nested-c1')">[ c.1. Affective Assessment Tool ]</span>
+                <ul id="nested-c1" class="nested-content">
+                    <li><a href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit?usp=drive_link" target="_blank">c.1.1. Likert</a></li>
+                    <li><a href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit?usp=drive_link" target="_blank">c.1.2. Sentence Completion</a></li>
+                    <li><a href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit?usp=drive_link" target="_blank">c.1.3. Semantic Differential</a></li>
+                    <li><a href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit?usp=drive_link" target="_blank">c.1.4. Checklist</a></li>
+                </ul>
+            </li>
+
+            <li><a href="https://docs.google.com/document/d/1bbtt440ofaiiEARVIKB7fb0wg_p85xS_/edit?usp=drive_link" target="_blank">[ c.2. Interview ]</a></li>
+            <li><a href="https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit?usp=drive_link" target="_blank">[ d. Favorable and Not Favorable ]</a></li>
+            
+            <li>
+                <span class="expandable-label" onclick="toggleNested('nested-e2')">[ e.2. Simulation ]</span>
+                <ul id="nested-e2" class="nested-content">
+                    <li>Group Video (In Progress)</li>
+                    <li>Reflection (In Progress)</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
     <div id="conclusion" class="content-section">
         <h2>Conclusion</h2>
         <ul class="toc-list" style="text-align: center;">
-            <li class="toc-item"><a href="https://docs.google.com/document/d/1jt-JvRi0r6J1-aEpi6-30BnvULMFKtbT/edit?usp=drive_link" class="toc-link" target="_blank">[ What I have learned ]</a></li>
-            <li class="toc-item"><a href="https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit?usp=drive_link" class="toc-link" target="_blank">[ Letter to myself ]</a></li>
-            <li class="toc-item"><a href="https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit?usp=drive_link" class="toc-link" target="_blank">[ Letter to my parent ]</a></li>
+            <li><a href="https://docs.google.com/document/d/1jt-JvRi0r6J1-aEpi6-30BnvULMFKtbT/edit?usp=drive_link" target="_blank">[ What I have learned ]</a></li>
+            <li><a href="https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit?usp=drive_link" target="_blank">[ Letter to myself ]</a></li>
+            <li><a href="https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit?usp=drive_link" target="_blank">[ Letter to my parent ]</a></li>
         </ul>
     </div>
 </div>
@@ -277,16 +221,18 @@
         const section = document.getElementById(sectionId);
         const isActive = btn.classList.contains('active');
 
-        // Hide all
         document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
 
-        // Toggle logic
         if (!isActive) {
             section.style.display = 'block';
             btn.classList.add('active');
-            window.scrollTo({ top: 150, behavior: 'smooth' });
         }
+    }
+
+    function toggleNested(id) {
+        const nested = document.getElementById(id);
+        nested.style.display = (nested.style.display === 'block') ? 'none' : 'block';
     }
 </script>
 
