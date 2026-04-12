@@ -6,12 +6,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --royal-dark: #120a09;
-      --deep-mahogany: #1e1110;
-      --gold-gradient: linear-gradient(45deg, #8a6d3b, #fcf6ba, #d4af37, #fbf5b7, #8a6d3b);
-      --diamond-glass: rgba(255, 255, 255, 0.1);
-      /* Premium Royal Wallpaper Pattern (Carved Style) */
-      --wall-pattern: linear-gradient(rgba(18, 10, 9, 0.9), rgba(18, 10, 9, 0.9)), url("https://www.transparenttextures.com/patterns/damask.png");
+      --royal-dark: #0f0807;
+      --gold-foil: linear-gradient(45deg, #8a6d3b, #fcf6ba, #d4af37, #fbf5b7, #8a6d3b);
+      --diamond-glass: rgba(255, 255, 255, 0.12);
     }
 
     body {
@@ -19,20 +16,20 @@
       margin: 0;
       padding: 0;
       background-color: var(--royal-dark);
-      /* 🏰 ROYAL WALLPAPER DESIGN */
-      background-image: var(--wall-pattern); 
+      /* 🎨 ARTISTIC ROYAL WALLPAPER - Painted Mural Style */
+      background-image: 
+        linear-gradient(rgba(15, 8, 7, 0.8), rgba(15, 8, 7, 0.8)),
+        url("https://www.transparenttextures.com/patterns/french-stucco.png"), /* Painted texture */
+        url("https://www.transparenttextures.com/patterns/ornamental-print.png"); /* Carved Art Designs */
+      background-attachment: fixed;
       color: #e0d5c1;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      /* ROYAL PAGE BORDER FRAME */
-      border: 18px solid transparent;
-      border-image: var(--gold-gradient) 20 stretch;
+      border: 20px solid transparent;
+      border-image: var(--gold-foil) 30 stretch;
       box-sizing: border-box;
-      background-attachment: fixed;
     }
 
-    /* 📸 LOCAL PAPARAZZI FLASH EFFECT */
+    /* 📸 LOCAL PAPARAZZI FLASH */
     .flash-active::after {
       content: "";
       position: absolute;
@@ -48,29 +45,29 @@
       100% { opacity: 0; }
     }
 
-    /* 💎 DIAMOND NAV TABS */
+    /* 💎 DIAMOND NAVIGATION */
     .header-container {
       position: sticky;
       top: 0;
       z-index: 2000;
       padding: 20px 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(15px);
-      border-bottom: 3px double #d4af37;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 4px double #d4af37;
     }
 
     .navbar {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .diamond-btn {
       background: var(--diamond-glass);
-      border: 1px solid rgba(212, 175, 55, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.6);
       color: #fcf6ba;
-      padding: 12px 25px;
+      padding: 12px 28px;
       font-family: 'Cinzel', serif;
       font-weight: bold;
       text-transform: uppercase;
@@ -79,48 +76,45 @@
       position: relative;
       overflow: hidden;
       transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      min-width: 140px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
     }
 
     .diamond-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.18);
       border-color: #fcf6ba;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    /* 👑 ROYAL CONTENT CARD */
+    /* 👑 CARVED ART CONTENT CARD */
     .main-content { padding: 40px 20px; }
     .section { display: none; max-width: 850px; margin: 0 auto; animation: entry 0.8s ease; }
 
     @keyframes entry {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .card {
-      background: rgba(30, 17, 16, 0.95);
-      /* This pattern overlay makes the Royal Wall texture stand out */
-      background-image: url("https://www.transparenttextures.com/patterns/damask.png"); 
+      background: rgba(25, 14, 12, 0.96);
+      /* Artistic background overlay inside the card */
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
       padding: 50px;
-      /* HEAVY CARVED BORDER DESIGN */
       border: 2px solid #d4af37;
-      outline: 8px double rgba(212, 175, 55, 0.3);
-      outline-offset: -15px;
-      box-shadow: 0 0 60px rgba(0,0,0,1);
+      outline: 10px double rgba(212, 175, 55, 0.2);
+      outline-offset: -20px;
+      box-shadow: 0 0 70px rgba(0,0,0,1);
       position: relative;
     }
 
     /* 🖼️ ROYAL PORTRAIT FRAME */
     .portrait-frame {
-      width: 260px;
-      height: 340px;
+      width: 280px;
+      height: 350px;
       margin: 0 auto 35px;
-      padding: 12px;
-      background: var(--gold-gradient);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-      clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%); /* Diamond cut frame */
+      padding: 15px;
+      background: var(--gold-foil);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+      clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
     }
 
     .portrait-inner {
@@ -128,39 +122,30 @@
       height: 100%;
       background: #000;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
-    .profile-img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      /* Added specific display setting to prevent modern browser rendering issues */
-      display: block; 
-    }
+    .profile-img { width: 100%; height: 100%; object-fit: cover; }
 
     .name-text {
       font-family: 'Cinzel', serif;
       text-align: center;
-      font-size: 38px;
-      background: var(--gold-gradient);
+      font-size: 40px;
+      background: var(--gold-foil);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 0;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* 📋 TOC & CONCLUSION DIAMOND LINKS */
-    .link-list { display: flex; flex-direction: column; gap: 15px; margin-top: 35px; }
+    /* 📂 TABLE OF CONTENTS / CONCLUSION */
+    .link-list { display: flex; flex-direction: column; gap: 18px; margin-top: 40px; }
     
     .folder-content {
       display: none;
-      padding: 10px 0 10px 30px;
+      padding: 10px 0 10px 35px;
       border-left: 2px solid #d4af37;
       margin: 5px 0 15px 0;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .sub-item {
@@ -170,9 +155,10 @@
       text-decoration: none;
       font-size: 15px;
       transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
 
-    .sub-item:hover { color: #fcf6ba; padding-left: 15px; background: rgba(255,255,255,0.05); }
+    .sub-item:hover { color: #fcf6ba; padding-left: 15px; background: rgba(212, 175, 55, 0.1); }
 
   </style>
 </head>
@@ -193,35 +179,36 @@
     <div class="card">
       <div class="portrait-frame">
         <div class="portrait-inner">
-          <img src="1.png" class="profile-img" alt="" onerror="this.onerror=null; this.alt='Error: Image Not Found (Check for 1.png file)';">
+          <img src="1" class="profile-img" alt="Altea" onerror="this.src='altea-portrait.jpg.jpg'">
         </div>
       </div>
       <h1 class="name-text">Altea Mae M. Quezada</h1>
-      <p style="text-align: center; letter-spacing: 6px; color: #d4af37; font-size: 12px; margin-top: 15px; font-weight: 600;">PROUD TINGGUIAN | FUTURE EDUCATOR</p>
+      <p style="text-align: center; letter-spacing: 7px; color: #d4af37; font-size: 12px; margin-top: 15px; font-weight: 600;">TINGGUIAN HERITAGE | FUTURE EDUCATOR</p>
       
-      <div style="margin-top: 40px; line-height: 2.2; text-align: justify; font-size: 16px; color: #d1c4b2;">
+      <div style="margin-top: 40px; line-height: 2.3; text-align: justify; font-size: 16px; color: #d1c4b2;">
         Hi! I am <b>Altea Mae M. Quezada</b>, a proud Tingguian and a BEED student who dreams of becoming a teacher that inspires and nurtures. I currently live in Consolado, Lingtan, Bangued, Abra, but my permanent home is in Naglibacan, Tineg, Abra, a place that shaped who I am today.
         <br><br>
-        I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada, who taught me the values of hard work, perseverance, and kindness. Growing up in a close-knit community, I learned the importance of culture, family, and staying true to one’s roots.
+        I was born on April 11, 2005, to my loving parents, Rhey Louis Quezada and Carolina Mariano Quezada, who taught me the values of hard work, perseverance, and kindness.
       </div>
-      <p style="font-family: 'Playfair Display', serif; font-style: italic; text-align: center; color: #fcf6ba; font-size: 22px; margin-top: 40px;">“In progress, but with purpose.”</p>
+      <p style="font-family: 'Playfair Display', serif; font-style: italic; text-align: center; color: #fcf6ba; font-size: 24px; margin-top: 40px; border-top: 1px solid rgba(212,175,55,0.3); padding-top: 20px;">“In progress, but with purpose.”</p>
     </div>
   </div>
 
   <div id="toc" class="section">
     <div class="card">
-      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba; text-align: center;">Table of Contents</h2>
+      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba; text-align: center; font-size: 30px;">Table of Contents</h2>
       <div class="link-list">
         <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1rSdimnp8DOr_cXC2rIqL_vP5_Jo73N2Q/edit')">a. Rubric</button>
         <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1OFeACEvQnREPtemJYSSyKhs1fPRy-OJL/edit')">b. GRASPS Model</button>
         <button class="diamond-btn" onclick="flashLink(this); toggleFol('c1')">c.1. Affective Tool ▾</button>
         <div id="c1" class="folder-content">
-          <a class="sub-item" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit" target="_blank">Likert</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit" target="_blank">Sentence Completion</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit" target="_blank">Semantic Differential</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit" target="_blank">Checklist</a>
-          <a class="sub-item" href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit" target="_blank">Written Reflection</a>
+          <a class="sub-item" href="https://docs.google.com/document/d/1fI0iRj6VusLIJXI20Ihmis1Wm5w43SUw/edit" target="_blank">c.1.1. Likert</a>
+          <a class="sub-item" href="https://docs.google.com/document/d/13OhAMg77nseOsnoYEDNWL04xxZ4ZYKSh/edit" target="_blank">c.1.2. Sentence Completion</a>
+          <a class="sub-item" href="https://docs.google.com/document/d/1PcZk-CMcHyRsS6fPJVR_t30TUDtuCJog/edit" target="_blank">c.1.3. Semantic Differential</a>
+          <a class="sub-item" href="https://docs.google.com/document/d/1JwVLQiyP8q6_qjdOQ05hUquvXvQ0lKMs/edit" target="_blank">c.1.4. Checklist</a>
+          <a class="sub-item" href="https://docs.google.com/document/d/1DGxj21hVB9H9o5wiW-T4aBLLcldrCWUd/edit" target="_blank">c.1.5. Written Reflection</a>
         </div>
+        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1bbtt440ofaiiEARVIKB7fb0wg_p85xS_/edit?usp=drive_link&ouid=116787142773177870820&rtpof=true&sd=true')">c.2. Interview 🔗</button>
         <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1l8X1Xqt40rGcnf5ZD8oYUAVULdJ7o6dG/edit')">d. Favorable & Not Favorable</button>
         <button class="diamond-btn" onclick="flashLink(this)">f. Slide 123</button>
       </div>
@@ -230,11 +217,11 @@
 
   <div id="conclusion" class="section">
     <div class="card">
-      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba; text-align: center;">Conclusion</h2>
+      <h2 style="font-family: 'Cinzel', serif; color: #fcf6ba; text-align: center; font-size: 30px;">Conclusion</h2>
       <div class="link-list">
         <button class="diamond-btn" onclick="flashLink(this)">What I Have Learned</button>
         <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1-yApQt1GN9By0NY0L5PgvnwOWPmCTzFH/edit')">Letter to Myself</button>
-        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit')">Letter to Parents</button>
+        <button class="diamond-btn" onclick="flashLink(this, 'https://docs.google.com/document/d/1OtK8yOvUlAK5aPrE-IY8-bFd9qAojPdX/edit')">Letter to Parent</button>
       </div>
     </div>
   </div>
